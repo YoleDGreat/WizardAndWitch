@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -11,7 +11,7 @@ namespace WizAndWitch
 {
 public static class Utils
 {
-    // Arrow-key menu for nicer UI. Returns index of selected option.
+    
     public static int ArrowMenu(string title, string[] options)
     {
         int idx = 0;
@@ -19,9 +19,10 @@ public static class Utils
         do
         {
             Console.Clear();
-            Console.WriteLine("=============================");
-            Console.WriteLine("\n======== " + title + " ========\n");
-            for (int i = 0; i < options.Length; i++)
+            Console.WriteLine("=================");
+            Console.WriteLine(title);
+            Console.WriteLine("=================");
+                for (int i = 0; i < options.Length; i++)
             {
                 if (i == idx)
                     Console.WriteLine($"> {options[i]}");
@@ -43,9 +44,10 @@ public static class Utils
     // Original choose option: enter number or name (case-insensitive)
     public static string ChooseOptionByInput(string title, string[] options)
     {
-        Console.WriteLine("=============================");
+        Console.WriteLine("=================================");
         Console.WriteLine("\n======== " + title + " ========");
-        for (int i = 0; i < options.Length; i++)
+        Console.WriteLine("=================================");
+            for (int i = 0; i < options.Length; i++)
         {
             Console.WriteLine($"{i + 1}. {options[i]}");
         }
