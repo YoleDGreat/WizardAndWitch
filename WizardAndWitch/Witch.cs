@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,7 +27,17 @@ namespace WizAndWitch
             this.Weapon = weapon;
             this.CompanionType = companionType;
             this.CompanionName = companionName;
-            SetStats(stats);
+            this.StatPoints = stats;
+
+            if (Weapon == "Book" || Weapon == "Chalice")
+            {
+                HasMagicAdvantage = true;
+            }
+            else if (Weapon == "Athame" || Weapon == "Boline")
+            {
+                HasMeleeAdvantage = true;
+            }
+
         }
         public override void DisplayCharacterInfo()
         {
@@ -37,4 +47,6 @@ namespace WizAndWitch
         }
     }
 }
+
+
 
